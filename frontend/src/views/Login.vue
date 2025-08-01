@@ -32,7 +32,6 @@ const handleLogin = async () => {
     // redirecionamento ou feedback
   } catch (error) {
     console.error('Erro ao fazer login:', error)
-    // opcional: exibir mensagem de erro ao usuário
   }
 }
 </script>
