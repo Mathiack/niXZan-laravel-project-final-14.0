@@ -20,21 +20,27 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 
 const email = ref('')
 const password = ref('')
+const errorMessage = ref(null)
+
 const auth = useAuthStore()
+const router = useRouter()
 
 const handleLogin = async () => {
   try {
-    await auth.login({ email: email.value, password: password.value })
-    // redirecionamento ou feedback
+    errorMessage.value = null
+    await auth.login({ login: email.value, password: password.value })
+    router.push('/') // ou '/' se preferir a raiz
   } catch (error) {
-    console.error('Erro ao fazer login:', error)
+    errorMessage.value = error.message || 'Erro ao fazer login.'
   }
 }
 </script>
+
 
 <style scoped>
 .register {
