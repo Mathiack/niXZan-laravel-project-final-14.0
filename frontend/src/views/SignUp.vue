@@ -1,6 +1,7 @@
 <template>
+  <link rel="stylesheet" href="../assets/palette.css">
   <div class="sign-up">
-    <h1>Sign up</h1>
+    <h1 class="title">Sign up</h1>
     <form class="form" @submit.prevent="submitSignUp">
 
       <div class="input-group">
@@ -24,7 +25,7 @@
       </div>
 
       <div class="input-group">
-        <label for="password-confirmation">Confirmar senha</label>
+        <label for="password-confirmation">Confirm password</label>
         <input type="password" id="password-confirmation" v-model="form.password_confirmation" required />
       </div>
 
@@ -74,6 +75,9 @@ async function submitSignUp() {
 
 
 <style scoped>
+.title {
+  color: var(--color-title);
+}
 .input-group {
   margin-bottom: 1rem;
   display: flex;

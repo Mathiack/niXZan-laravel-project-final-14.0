@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <h1>Login</h1>
+    <h1 class="title">Login</h1>
 
     <form class="form" @submit.prevent="handleLogin">
       <div class="input-group">
@@ -43,6 +43,9 @@ const handleLogin = async () => {
 
 
 <style scoped>
+.title {
+  color: var(--color-title);
+}
 .register {
   max-width: 800px;
   margin: 0 auto;
